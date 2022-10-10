@@ -13,6 +13,11 @@
 
 ### Выборка данных
 
+#### Все записи
+`GET /person`
+
+    curl -i -X GET localhost:8080/person -H 'Content-type:application/json'
+
 #### По ID
 `GET /person/id/{id}`
 
@@ -35,7 +40,7 @@
     curl -i -X POST localhost:8080/person -H 'Content-type:application/json' -d '{"lastName": "Ivanov", "name": "Ivan"}'
 
 ### Обновление данных
-`PUT /person/id  (+JSON данные в теле запроса)`
+`PUT /person/{id}  (+JSON данные в теле запроса)`
 
     curl -i -X PUT localhost:8080/person/1 -H 'Content-type:application/json' -d '{"lastName": "Ivanov", "name": "Ivan"}'
 
