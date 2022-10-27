@@ -1,12 +1,14 @@
 package com.example.dbtestrestapibft
 
+import com.example.dbtestrestapibft.PersonRepository.Person
+import com.example.dbtestrestapibft.PersonRepository.PersonRepository
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import javax.servlet.http.HttpServletResponse
 
 @RestController
 @RequestMapping("/person")
-class PersonController (
+class PersonRestController (
     private val repository: PersonRepository
 ) {
     @GetMapping

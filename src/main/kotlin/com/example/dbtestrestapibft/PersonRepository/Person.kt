@@ -1,4 +1,4 @@
-package com.example.dbtestrestapibft
+package com.example.dbtestrestapibft.PersonRepository
 
 data class Person(
     var id: Long? = null,

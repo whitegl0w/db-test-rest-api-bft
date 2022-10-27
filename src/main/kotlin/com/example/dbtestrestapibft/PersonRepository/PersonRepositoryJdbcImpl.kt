@@ -1,4 +1,4 @@
-package com.example.dbtestrestapibft
+package com.example.dbtestrestapibft.PersonRepository
 
 import org.springframework.context.annotation.Primary
 import org.springframework.jdbc.core.JdbcTemplate
@@ -10,7 +10,7 @@ import java.sql.ResultSet
 
 @Repository
 @Primary
-class JdbcTemplatePersonRepository (
+class PersonRepositoryJdbcImpl (
     private val jdbcTemplate: JdbcTemplate
 ) : PersonRepository {
 
@@ -42,6 +42,15 @@ class JdbcTemplatePersonRepository (
             "select * from Person where lastName = ?",
             personRowMapper,
             lastName
+        )
+    }
+
+    override fun findByLastNameAndName(person: Person): List<Person> {
+        return jdbcTemplate.query(
+            "select * from Person where name = ? and lastName = ?",
+            personRowMapper,
+            person.name,
+            person.lastName,
         )
     }
 

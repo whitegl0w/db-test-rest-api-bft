@@ -1,5 +1,7 @@
 package com.example.dbtestrestapibft
 
+import com.example.dbtestrestapibft.PersonRepository.Person
+import com.example.dbtestrestapibft.PersonRepository.PersonRepository
 import org.junit.jupiter.api.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -18,7 +20,7 @@ class RestApiTest {
 
     private lateinit var testPerson: Person
 
-    private val charPool : List<Char> = ('a'..'z') + ('A'..'Z')
+    private val charPool = ('a'..'z') + ('A'..'Z')
 
     fun rndStr(len: Int) =
         (1..len)

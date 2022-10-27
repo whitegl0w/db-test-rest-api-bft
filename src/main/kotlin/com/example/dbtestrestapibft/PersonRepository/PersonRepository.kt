@@ -1,4 +1,4 @@
-package com.example.dbtestrestapibft
+package com.example.dbtestrestapibft.PersonRepository
 
 interface PersonRepository {
 
@@ -7,6 +7,8 @@ interface PersonRepository {
     fun findByName(name: String): List<Person>
 
     fun findByLastName(lastName: String): List<Person>
+
+    fun findByLastNameAndName(person: Person): List<Person>
 
     fun findById(id: Long): Person?
 
